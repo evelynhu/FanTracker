@@ -1,0 +1,94 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/post_bg"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/post_item_margin"
+        android:layout_marginRight="@dimen/post_item_margin"
+        android:layout_marginTop="@dimen/post_item_margin_top_bottom"
+        android:layout_marginBottom="@dimen/post_item_margin_top_bottom"
+        android:background="@drawable/bg_parent_rounded_corner"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/post_item_padding_top_bottom">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/post_item_padding_left_right"
+            android:paddingRight="@dimen/post_item_padding_left_right" >
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/post_item_profile_image"
+                android:layout_width="@dimen/post_item_profile_pic"
+                android:layout_height="@dimen/post_item_profile_pic"
+                android:scaleType="fitCenter"
+                fresco:placeholderImage="@drawable/default_profile"/>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/post_item_profile_info_padd" >
+
+                <TextView
+                    android:id="@+id/post_item_profile_name"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/post_item_profile_name"
+                    android:textStyle="bold"
+                    tools:text="Page Name" />
+
+                <TextView
+                    android:id="@+id/post_item_timestamp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/timestamp"
+                    android:textSize="@dimen/post_item_timestamp"
+                    tools:text="created time"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/post_item_caption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/post_item_status_pad_left_right"
+            android:paddingRight="@dimen/post_item_status_pad_left_right"
+            android:paddingTop="@dimen/post_item_status_pad_top"
+            android:paddingBottom="@dimen/post_item_status_pad_top"
+            tools:text="Good morning :)" />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/post_item_imageview"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/page_item_image_height"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            fresco:placeholderImage="@drawable/default_image"/>
+
+        <TextView
+            android:id="@+id/post_item_viewer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/post_item_status_pad_left_right"
+            android:paddingRight="@dimen/post_item_status_pad_left_right"
+            android:paddingTop="@dimen/post_item_status_pad_top"
+            android:paddingBottom="@dimen/post_item_status_pad_top"
+            android:textSize="@dimen/post_item_viewer"
+            android:textColor="@color/viewer"
+            tools:text="0 people saw this post" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/post_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/post_item_margin"
+        android:layout_marginRight="@dimen/post_item_margin"
+        android:layout_marginTop="@dimen/post_item_margin_top_bottom"
+        android:layout_marginBottom="@dimen/post_item_margin_top_bottom"
+        android:background="@drawable/bg_parent_rounded_corner"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/post_item_padding_top_bottom">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/post_item_padding_left_right"
+            android:paddingRight="@dimen/post_item_padding_left_right" >
+
+            <ImageView
+                android:id="@+id/adImage"
+                android:layout_width="@dimen/post_item_profile_pic"
+                android:layout_height="@dimen/post_item_profile_pic"
+                android:scaleType="fitCenter"
+                tools:src="@mipmap/ic_launcher"/>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/post_item_profile_info_padd" >
+
+                <TextView
+                    android:id="@+id/tvAdTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:textSize="@dimen/post_item_profile_name"
+                    android:textStyle="bold"
+                    tools:text="Ad Title"/>
+
+                <TextView
+                    android:id="@+id/sponsored_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="Sponsored"
+                    android:textColor="@color/timestamp"
+                    android:textSize="@dimen/post_item_timestamp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvAdBody"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:ellipsize="end"
+            android:lines="3"
+            android:paddingLeft="@dimen/post_item_status_pad_left_right"
+            android:paddingRight="@dimen/post_item_status_pad_left_right"
+            android:paddingTop="@dimen/post_item_status_pad_top"
+            android:paddingBottom="@dimen/post_item_status_pad_top"
+            tools:text="This is an ad description."/>
+
+        <com.facebook.ads.MediaView
+            android:id="@+id/mediaView"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/page_item_image_height"
+            android:layout_gravity="center_horizontal"/>
+
+        <LinearLayout
+            android:id="@+id/adChoicesContainer"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/btnCTA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="@dimen/post_item_status_pad_left_right"
+                android:paddingTop="@dimen/post_item_status_pad_top"
+                android:paddingBottom="@dimen/post_item_status_pad_top"
+                android:textSize="@dimen/post_item_viewer"
+                android:textColor="@color/viewer" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
