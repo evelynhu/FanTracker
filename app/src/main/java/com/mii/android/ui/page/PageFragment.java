@@ -94,7 +94,7 @@ public class PageFragment extends BaseFragment {
     }
 
     public PageFragment() {
-        mRecyclerViewItems = new ArrayList<>();
+
     }
 
     @Override
@@ -138,7 +138,7 @@ public class PageFragment extends BaseFragment {
         }
 
         mUnbinder = ButterKnife.bind(this, view);
-
+        mRecyclerViewItems = new ArrayList<>();
         mRecyclerView.setHasFixedSize(true);
 
         mLinearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
@@ -194,7 +194,6 @@ public class PageFragment extends BaseFragment {
         mShimmerViewContainer.startShimmerAnimation();
         mTrackingBus = new ThrottleTrackingBus(this::onTrackViewResponse, RxUtil.logError());
         mRecyclerView.addOnScrollListener(detectingItemObservedByUser);
-        mLinearLayoutManager.scrollToPosition(mLinearLayoutManager.findLastCompletelyVisibleItemPosition());
     }
 
     @Override

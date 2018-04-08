@@ -9,6 +9,8 @@ The app is a simulation of an fan page management application with two main scre
 
 ![App screenshot](/doc/app.png)
 
+![App Overview](/doc/fan_tracker.mp4)
+
 ### Use cases
 
 1. Publish a new post would add the element to the fan page.
@@ -40,9 +42,54 @@ App tracking solution for the following task: identify which item of the Recycle
 ![Project Structure](/doc/project_structure.png)
 
 
+**Using Firebase as realtime database and image storage.**
+* Backend as a service
+* Focus on app development
+* Easy to set up
+* Real-time data sync :
+Firebase is designed with a model-observer scheme which is most useful for interactive apps. Any change in data done on the server is updated to the registered clients in real-time. The data syncs almost instantly on the client devices.
+* Cloud messaging and remote customization of apps enables to update the app variables instantly.
+
+**Using Simple Factory Design Pattern for organizing all ads**
+
+![App screenshot](/doc/ad_types.png)
+
+* Loose coupling: using a factory you could  easiliy switch from one implementation to another
+* Encapsulation: Sometimes, using a factory improves the readibility of your code and reduces its complexity by encapsulation.
+
+**Using Fresco to display images**
+
+* Image pipeline:
+Fresco’s image pipeline will load images from the network, local storage, or local resources. To save data and CPU, it has three levels of cache; two in memory and another in internal storage.
+
+![App screenshot](/doc/imagepipeline.png)
+
+* Decreasing OOM rate:
+using native heap instead of java heap. A decompressed image - an Android Bitmap - takes up a lot of memory. This leads to more frequent runs of the Java garbage collector. This slows apps down. The problem is especially bad without the improvements to the garbage collector made in Android 5.0.
+
+* It's good for app which need to load lots of images
+
+* Drawees:
+Fresco’s Drawee shows a placeholder for you until the image has loaded and then automatically shows the image when it arrives. When the image goes off-screen, it automatically releases its memory.
+
+* Image Pipeline:
+Fresco’s image pipeline will load images from the network, local storage, or local resources. To save data and CPU, it has three levels of cache; two in memory and another in internal storage.
+
+**Using two fragments for controlling post list page and draft editing page.**
+
+**Using view pager for switching the fragments**
+
+## Possible Alternative Design for App based in China
+
+* using Parse Server and Amazon S3 storage services
+
+
+
 ## Additional setup
 
 **Audience Network demo**: If you are using the default Google Android emulator, you'll add the hash ID of testing device. The hashed ID is printed to logcat when you first make a request to load an ad on a device. Genymotion and physical devices do not need this step. If you would like to test with real ads, please consult our Testing Guide. [More information.](https://developers.facebook.com/docs/audience-network)
+
+* Change the [TEST_DEVICE_HASH](/app/src/main/java/com/mii/android/util/Constant.java)
 
 **Firebase demo**:
 

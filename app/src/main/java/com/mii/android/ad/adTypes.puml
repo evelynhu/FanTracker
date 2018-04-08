@@ -1,0 +1,41 @@
+@startuml
+class PageFragment
+class SimpleAdFactory
+interface IAdAction
+class AdStore
+
+class BannerAdView
+class InterstitialAdView
+class InStreamAdView
+class NativeAdView
+class RewardedVideoAdView
+
+AdStore <-- PageFragment
+SimpleAdFactory <-- PageFragment
+
+IAdAction <|-- BannerAdView
+IAdAction <|-- InterstitialAdView
+IAdAction <|-- InStreamAdView
+IAdAction <|-- NativeAdView
+IAdAction <|-- RewardedVideoAdView
+
+SimpleAdFactory --* AdStore
+IAdAction <- AdStore
+
+
+class AdStore {
+Object[] SimpleAdFactory
+getAdAction()
+}
+
+interface IAdAction {
+create()
+destroy()
+}
+
+class SimpleAdFactory {
+createAd()
+}
+
+
+@enduml

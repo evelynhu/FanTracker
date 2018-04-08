@@ -4,31 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/post_bg"
+    android:background="@color/lightGray"
     android:orientation="vertical" >
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/post_item_margin"
-        android:layout_marginRight="@dimen/post_item_margin"
-        android:layout_marginTop="@dimen/post_item_margin_top_bottom"
-        android:layout_marginBottom="@dimen/post_item_margin_top_bottom"
+        android:layout_marginLeft="@dimen/margin_normal"
+        android:layout_marginRight="@dimen/margin_normal"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginBottom="@dimen/margin_small"
         android:background="@drawable/bg_parent_rounded_corner"
         android:orientation="vertical"
-        android:paddingTop="@dimen/post_item_padding_top_bottom">
+        android:paddingTop="@dimen/padding_extra_large">
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingLeft="@dimen/post_item_padding_left_right"
-            android:paddingRight="@dimen/post_item_padding_left_right" >
+            android:paddingLeft="@dimen/padding_large"
+            android:paddingRight="@dimen/padding_large" >
 
             <com.facebook.drawee.view.SimpleDraweeView
                 android:id="@+id/post_item_profile_image"
-                android:layout_width="@dimen/post_item_profile_pic"
-                android:layout_height="@dimen/post_item_profile_pic"
+                android:layout_width="@dimen/image_size_small"
+                android:layout_height="@dimen/image_size_small"
                 android:scaleType="fitCenter"
                 fresco:placeholderImage="@drawable/default_profile"/>
 
@@ -36,14 +36,14 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:orientation="vertical"
-                android:paddingLeft="@dimen/post_item_profile_info_padd" >
+                android:paddingLeft="@dimen/padding_small" >
 
                 <TextView
                     android:id="@+id/post_item_profile_name"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textSize="@dimen/post_item_profile_name"
+                    android:textSize="@dimen/text_size_normal"
                     android:textStyle="bold"
                     tools:text="Page Name" />
 
@@ -52,8 +52,8 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="@color/timestamp"
-                    android:textSize="@dimen/post_item_timestamp"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/text_size_small"
                     tools:text="created time"/>
             </LinearLayout>
         </LinearLayout>
@@ -62,16 +62,16 @@
             android:id="@+id/post_item_caption"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="@dimen/post_item_status_pad_left_right"
-            android:paddingRight="@dimen/post_item_status_pad_left_right"
-            android:paddingTop="@dimen/post_item_status_pad_top"
-            android:paddingBottom="@dimen/post_item_status_pad_top"
+            android:paddingLeft="@dimen/padding_large"
+            android:paddingRight="@dimen/padding_large"
+            android:paddingTop="@dimen/padding_medium"
+            android:paddingBottom="@dimen/padding_medium"
             tools:text="Good morning :)" />
 
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/post_item_imageview"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/page_item_image_height"
+            android:layout_height="@dimen/image_size_large"
             android:layout_gravity="center_horizontal"
             android:scaleType="centerInside"
             android:adjustViewBounds="true"
@@ -81,12 +81,12 @@
             android:id="@+id/post_item_viewer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="@dimen/post_item_status_pad_left_right"
-            android:paddingRight="@dimen/post_item_status_pad_left_right"
-            android:paddingTop="@dimen/post_item_status_pad_top"
-            android:paddingBottom="@dimen/post_item_status_pad_top"
-            android:textSize="@dimen/post_item_viewer"
-            android:textColor="@color/viewer"
+            android:paddingLeft="@dimen/padding_large"
+            android:paddingRight="@dimen/padding_large"
+            android:paddingTop="@dimen/padding_medium"
+            android:paddingBottom="@dimen/padding_medium"
+            android:textSize="@dimen/text_size_small"
+            android:textColor="@color/colorPrimary"
             tools:text="0 people saw this post" />
 
     </LinearLayout>

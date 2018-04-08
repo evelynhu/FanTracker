@@ -32,7 +32,7 @@ public class SimpleAdFactory {
         if (adType == AdType.INTERSTITIAL)
             return new InterstitialAdView(mContext, mPlacementId);
         if (adType == AdType.INTREAM)
-            return new IntreamAdView(mContext, mPlacementId, mContainer);
+            return new InStreamAdView(mContext, mPlacementId, mContainer);
         if (adType == AdType.REWARD_VIDEO)
             return new RewardedVideoAdView(mContext, mPlacementId);
         else

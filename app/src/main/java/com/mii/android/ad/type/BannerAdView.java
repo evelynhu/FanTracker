@@ -21,11 +21,9 @@ public class BannerAdView implements IAdAction {
     }
 
     public void create() {
-        if (mBannerAd == null) {
-            mBannerAd = new AdView(mContext, mPlacementId, AdSize.BANNER_HEIGHT_50);
-            mBannerAdContainer.addView(mBannerAd);
-            mBannerAd.loadAd();
-        }
+        mBannerAd = new AdView(mContext, mPlacementId, AdSize.BANNER_HEIGHT_50);
+        mBannerAdContainer.addView(mBannerAd);
+        mBannerAd.loadAd();
     }
 
     @Override

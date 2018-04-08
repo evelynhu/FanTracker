@@ -191,7 +191,7 @@ public class DraftFragment  extends BaseFragment {
         if(mPictureLocalPath != null)
         {
             final ProgressDialog progressDialog = new ProgressDialog(getContext());
-            progressDialog.setTitle("Uploading...");
+            progressDialog.setTitle(R.string.uploading);
             progressDialog.show();
 
             Log.d(TAG, "upload image from : " + mPictureLocalPath);
@@ -201,7 +201,7 @@ public class DraftFragment  extends BaseFragment {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                             progressDialog.dismiss();
-                            Toast.makeText(getContext(), "Uploaded", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), R.string.uploaded, Toast.LENGTH_SHORT).show();
                             writeNewPost(taskSnapshot.getDownloadUrl().toString());
                             resetUI();
                         }
@@ -210,7 +210,7 @@ public class DraftFragment  extends BaseFragment {
                         @Override
                         public void onFailure(@NonNull Exception e) {
                             progressDialog.dismiss();
-                            Toast.makeText(getContext(), "Cannot post the status at this time. Please check your connection and try again.", Toast.LENGTH_LONG).show();                        }
+                            Toast.makeText(getContext(), R.string.upload_error, Toast.LENGTH_LONG).show();                        }
                     })
                     .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
                         @Override

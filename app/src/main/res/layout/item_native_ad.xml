@@ -4,31 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/post_bg"
+    android:background="@color/lightGray"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/post_item_margin"
-        android:layout_marginRight="@dimen/post_item_margin"
-        android:layout_marginTop="@dimen/post_item_margin_top_bottom"
-        android:layout_marginBottom="@dimen/post_item_margin_top_bottom"
+        android:layout_marginLeft="@dimen/margin_normal"
+        android:layout_marginRight="@dimen/margin_normal"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginBottom="@dimen/margin_small"
         android:background="@drawable/bg_parent_rounded_corner"
         android:orientation="vertical"
-        android:paddingTop="@dimen/post_item_padding_top_bottom">
+        android:paddingTop="@dimen/padding_extra_large">
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingLeft="@dimen/post_item_padding_left_right"
-            android:paddingRight="@dimen/post_item_padding_left_right" >
+            android:paddingLeft="@dimen/padding_large"
+            android:paddingRight="@dimen/padding_large" >
 
             <ImageView
                 android:id="@+id/adImage"
-                android:layout_width="@dimen/post_item_profile_pic"
-                android:layout_height="@dimen/post_item_profile_pic"
+                android:layout_width="@dimen/image_size_small"
+                android:layout_height="@dimen/image_size_small"
                 android:scaleType="fitCenter"
                 tools:src="@mipmap/ic_launcher"/>
 
@@ -36,7 +36,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:orientation="vertical"
-                android:paddingLeft="@dimen/post_item_profile_info_padd" >
+                android:paddingLeft="@dimen/padding_small" >
 
                 <TextView
                     android:id="@+id/tvAdTitle"
@@ -45,7 +45,7 @@
                     android:layout_weight="1"
                     android:gravity="center_vertical"
                     android:maxLines="1"
-                    android:textSize="@dimen/post_item_profile_name"
+                    android:textSize="@dimen/text_size_normal"
                     android:textStyle="bold"
                     tools:text="Ad Title"/>
 
@@ -57,8 +57,8 @@
                     android:ellipsize="end"
                     android:lines="1"
                     android:text="Sponsored"
-                    android:textColor="@color/timestamp"
-                    android:textSize="@dimen/post_item_timestamp" />
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/text_size_small" />
 
             </LinearLayout>
         </LinearLayout>
@@ -69,16 +69,16 @@
             android:layout_height="match_parent"
             android:ellipsize="end"
             android:lines="3"
-            android:paddingLeft="@dimen/post_item_status_pad_left_right"
-            android:paddingRight="@dimen/post_item_status_pad_left_right"
-            android:paddingTop="@dimen/post_item_status_pad_top"
-            android:paddingBottom="@dimen/post_item_status_pad_top"
+            android:paddingLeft="@dimen/padding_large"
+            android:paddingRight="@dimen/padding_large"
+            android:paddingTop="@dimen/padding_medium"
+            android:paddingBottom="@dimen/padding_medium"
             tools:text="This is an ad description."/>
 
         <com.facebook.ads.MediaView
             android:id="@+id/mediaView"
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/page_item_image_height"
+            android:layout_height="@dimen/image_size_large"
             android:layout_gravity="center_horizontal"/>
 
         <LinearLayout
@@ -91,11 +91,11 @@
                 android:id="@+id/btnCTA"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingRight="@dimen/post_item_status_pad_left_right"
-                android:paddingTop="@dimen/post_item_status_pad_top"
-                android:paddingBottom="@dimen/post_item_status_pad_top"
-                android:textSize="@dimen/post_item_viewer"
-                android:textColor="@color/viewer" />
+                android:paddingRight="@dimen/padding_large"
+                android:paddingTop="@dimen/padding_medium"
+                android:paddingBottom="@dimen/padding_medium"
+                android:textSize="@dimen/text_size_small"
+                android:textColor="@color/colorPrimary" />
 
         </LinearLayout>
 

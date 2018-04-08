@@ -26,11 +26,6 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.mii.android.ui.AboutActivity"
-            android:label="@string/screen_title_about"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
 
     </application>
 

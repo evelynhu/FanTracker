@@ -1,35 +1,28 @@
 <resources>
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
-    <dimen name="appbar_padding_top">8dp</dimen>
-
-    <!-- Standards -->
+    <!-- Padding -->
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_normal">10dp</dimen>
+    <dimen name="padding_medium">13dp</dimen>
     <dimen name="padding_large">16dp</dimen>
-    <dimen name="padding_normal">8dp</dimen>
+    <dimen name="padding_extra_large">20dp</dimen>
 
-    <!-- Page -->
-    <dimen name="page_item_image_height">280dp</dimen>
-    <dimen name="page_item_padding">0dp</dimen>
-    <dimen name="page_item_bottom_padding">20dp</dimen>
-    <dimen name="page_item_image_top_bottom">@dimen/padding_normal</dimen>
+    <!-- Margin -->
+    <dimen name="margin_small">5dp</dimen>
+    <dimen name="margin_normal">10dp</dimen>
 
-    <!-- Post -->
-    <dimen name="post_item_margin_top_bottom">5dp</dimen>
-    <dimen name="post_item_margin">10dp</dimen>
-    <dimen name="post_item_padding_top_bottom">20dp</dimen>
-    <dimen name="post_item_padding_left_right">15dp</dimen>
-    <dimen name="post_item_profile_pic">50dp</dimen>
-    <dimen name="post_item_profile_info_padd">10dp</dimen>
-    <dimen name="post_item_profile_name">15dp</dimen>
-    <dimen name="post_item_timestamp">13dp</dimen>
-    <dimen name="post_item_viewer">13dp</dimen>
-    <dimen name="post_item_status_pad_left_right">15dp</dimen>
-    <dimen name="post_item_status_pad_top">13dp</dimen>
-    <dimen name="post_item_corner_radius">3dp</dimen>
-    <dimen name="post_item_border_width">1dp</dimen>
+    <!-- Image -->
+    <dimen name="image_size_small">50dp</dimen>
+    <dimen name="image_size_normal">100dp</dimen>
+    <dimen name="image_size_large">280dp</dimen>
 
-    <dimen name="activity_padding">16dp</dimen>
-    <dimen name="placeholder_image">50dp</dimen>
-    <dimen name="placeholder_text_height">8dp</dimen>
-    <dimen name="placeholder_image_height">100dp</dimen>
+    <!-- Text Size -->
+    <dimen name="text_size_small">13dp</dimen>
+    <dimen name="text_size_normal">15dp</dimen>
+
+    <!-- Others -->
+    <dimen name="border_width">1dp</dimen>
+    <dimen name="corner_radius">3dp</dimen>
+    <dimen name="text_height">8dp</dimen>
+
+
 </resources>

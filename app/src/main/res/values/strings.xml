@@ -2,27 +2,21 @@
     <string name="app_name">Fan Tracker</string>
 
     <!-- Placeholder -->
-
     <string name="placeholder_text">Hello World from section: %1$d</string>
 
     <!-- Page -->
-
     <string name="page_empty">Write something here...</string>
 
     <!-- Menu -->
-    <string name="menu_about">About</string>
     <string name="menu_banner">Banner</string>
     <string name="menu_interstitial">Interstitial</string>
-    <string name="menu_instream">Instream</string>
+    <string name="menu_instream">In-Stream</string>
     <string name="menu_rewarded_video">Rewarded Video</string>
 
-    <!-- About -->
-    <string name="screen_title_about">About</string>
-    <string name="about_main_text">This a demo app for Facebook Audience Network and detecting user observe content behavior</string>
-
-    <!-- GA CONFIG -->
-    <string name="ga_anonymizeIp">false</string>
-
+    <!-- Draft -->
     <string name="post_hint">What\'s on your mind?</string>
+    <string name="uploaded">Uploaded</string>
+    <string name="uploading">Uploading...</string>
+    <string name="upload_error">Cannot post the status at this time. Please check your connection and try again.</string>
 
-</resources>
+    </resources>

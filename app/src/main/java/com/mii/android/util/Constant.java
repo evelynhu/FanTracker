@@ -1,7 +1,8 @@
 package com.mii.android.util;
 
 public class Constant {
-    public static final String TEST_DEVICE_HASH = "d1b7fc3dc1b94f1b015b095d8f0b7487"; // Pixel 2 API 26
-    // public static final String TEST_DEVICE_HASH = "272819c3e1af54c282e9b3e9c0de888f"; // Pixel 2 API 26 EDGE
+    public static final String TEST_DEVICE_HASH = "95d40675aaaaa3c3f4c933b0040ddc6d";
+//    public static final String TEST_DEVICE_HASH = "620a32b0e870a48e3f967cfe6d203670";
+//    public static final String TEST_DEVICE_HASH = "TEST_DEVICE_HASH";
     public static final String PLACEMENT_ID = "YOUR_PLACEMENT_ID";
 }

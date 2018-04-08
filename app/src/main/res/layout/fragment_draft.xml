@@ -4,90 +4,94 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/post_bg"
+    android:background="@color/lightGray"
     android:orientation="vertical" >
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/post_item_margin"
-        android:layout_marginRight="@dimen/post_item_margin"
-        android:layout_marginTop="@dimen/post_item_margin"
-        android:background="@drawable/bg_parent_rounded_corner"
-        android:orientation="vertical"
-        android:paddingTop="@dimen/post_item_padding_top_bottom" >
-
+    <ScrollView
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent">
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="@dimen/post_item_padding_left_right"
-            android:paddingRight="@dimen/post_item_padding_left_right" >
-
-            <com.facebook.drawee.view.SimpleDraweeView
-                android:id="@+id/post_item_profile_image"
-                android:layout_width="@dimen/post_item_profile_pic"
-                android:layout_height="@dimen/post_item_profile_pic"
-                android:scaleType="fitCenter"
-                fresco:placeholderImage="@drawable/default_profile"/>
+            android:layout_marginLeft="@dimen/margin_normal"
+            android:layout_marginRight="@dimen/margin_normal"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:layout_marginBottom="@dimen/margin_normal"
+            android:paddingTop="@dimen/padding_extra_large"
+            android:paddingBottom="@dimen/padding_small"
+            android:background="@drawable/bg_parent_rounded_corner"
+            android:orientation="vertical" >
 
             <LinearLayout
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:orientation="vertical"
-                android:paddingLeft="@dimen/post_item_profile_info_padd" >
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/padding_large"
+                android:paddingRight="@dimen/padding_large" >
 
-                <TextView
-                    android:id="@+id/post_item_profile_name"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="@dimen/post_item_profile_name"
-                    android:textStyle="bold"
-                    tools:text="Page Name" />
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/post_item_profile_image"
+                    android:layout_width="@dimen/image_size_small"
+                    android:layout_height="@dimen/image_size_small"
+                    android:scaleType="fitCenter"
+                    fresco:placeholderImage="@drawable/default_profile"/>
 
-                <TextView
-                    android:id="@+id/post_item_privacy"
+                <LinearLayout
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textColor="@color/timestamp"
-                    android:textSize="@dimen/post_item_timestamp"
-                    android:text="public" />
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/padding_small" >
+
+                    <TextView
+                        android:id="@+id/post_item_profile_name"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="@dimen/text_size_normal"
+                        android:textStyle="bold"
+                        tools:text="Page Name" />
+
+                    <TextView
+                        android:id="@+id/post_item_privacy"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/text_size_small"
+                        android:text="public" />
+                </LinearLayout>
             </LinearLayout>
+
+            <EditText
+                android:id="@+id/post_item_caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/padding_large"
+                android:paddingLeft="@dimen/padding_large"
+                android:paddingRight="@dimen/padding_large"
+                android:paddingTop="@dimen/padding_medium"
+                android:paddingBottom="@dimen/padding_medium"
+                android:ems="10"
+                android:maxLines="4"
+                android:inputType="textMultiLine"
+                android:hint="@string/post_hint"/>
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/post_item_imageview"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/image_size_large"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="centerInside"
+                android:adjustViewBounds="true"
+                fresco:placeholderImage="@drawable/default_image"/>
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:id="@+id/post_item_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Publish" />
+
+
         </LinearLayout>
-
-        <EditText
-            android:id="@+id/post_item_caption"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/activity_horizontal_margin"
-            android:paddingLeft="@dimen/post_item_status_pad_left_right"
-            android:paddingRight="@dimen/post_item_status_pad_left_right"
-            android:paddingTop="@dimen/post_item_status_pad_top"
-            android:paddingBottom="@dimen/post_item_status_pad_top"
-            android:ems="10"
-            android:maxLines="4"
-            android:inputType="textMultiLine"
-            android:hint="@string/post_hint"/>
-
-        <com.facebook.drawee.view.SimpleDraweeView
-            android:id="@+id/post_item_imageview"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/page_item_image_height"
-            android:layout_gravity="center_horizontal"
-            android:scaleType="centerInside"
-            android:adjustViewBounds="true"
-            fresco:placeholderImage="@drawable/default_image"/>
-
-        <Button
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:id="@+id/post_item_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Publish" />
-
-
-    </LinearLayout>
-
+    </ScrollView>
 </LinearLayout>

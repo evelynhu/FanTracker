@@ -2,9 +2,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ui.FanTrackerActivity">
-    <item android:id="@+id/about"
-        app:showAsAction="withText"
-        android:title="@string/menu_about" />
     <item android:id="@+id/banner"
           app:showAsAction="withText"
           android:title="@string/menu_banner" />

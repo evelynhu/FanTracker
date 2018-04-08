@@ -254,9 +254,6 @@ public class FanTrackerActivity extends BaseActivity {
         types.add(AdType.NATIVE);
 
         switch (item.getItemId()) {
-            case R.id.about:
-                intent = new Intent(this, AboutActivity.class);
-                startActivity(intent);
             case R.id.banner:
                 types.add(AdType.BANNER);
                 bundle.putIntegerArrayList("AdTypes", types);

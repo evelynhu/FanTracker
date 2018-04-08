@@ -32,57 +32,55 @@ public class NativeAdView implements IAdAction {
     }
 
     public void create() {
-        if (mNativeAd == null) {
-            mNativeAd = new NativeAd(this.mContext, this.mPlacementId);
-            mNativeAd.setAdListener(new AdListener() {
-                @Override
-                public void onError(Ad ad, AdError adError) {
-                }
+        mNativeAd = new NativeAd(this.mContext, this.mPlacementId);
+        mNativeAd.setAdListener(new AdListener() {
+            @Override
+            public void onError(Ad ad, AdError adError) {
+            }
 
-                @Override
-                public void onAdLoaded(Ad ad) {
-                }
+            @Override
+            public void onAdLoaded(Ad ad) {
+            }
 
-                @Override
-                public void onAdClicked(Ad ad) {
+            @Override
+            public void onAdClicked(Ad ad) {
 
-                }
+            }
 
-                @Override
-                public void onLoggingImpression(Ad ad) {
-                }
-            });
-            mNativeAd = new NativeAd(mContext, mPlacementId);
-            mNativeAd.setAdListener(new AdListener() {
-                @Override
-                public void onError(Ad ad, AdError adError) {
-                    Log.d(TAG, "[onError]" + adError.toString());
-                }
+            @Override
+            public void onLoggingImpression(Ad ad) {
+            }
+        });
+        mNativeAd = new NativeAd(mContext, mPlacementId);
+        mNativeAd.setAdListener(new AdListener() {
+            @Override
+            public void onError(Ad ad, AdError adError) {
+                Log.d(TAG, "[onError]" + adError.toString());
+            }
 
-                @Override
-                public void onAdLoaded(Ad ad) {
-                    Log.d(TAG, "[onAdLoaded] insert : " + mAdIndex + ", size : " + mRecyclerViewItems.size() + ", keys size : " + mAdapter.getKeySize());
-                    if (mRecyclerViewItems.size() > mAdIndex) {
-                        mRecyclerViewItems.add(mAdIndex, ad);
-                        mAdapter.insertKey(mAdIndex, String.valueOf(ad.hashCode()));
-                        mAdapter.notifyDataSetChanged();
-                        Log.d(TAG, "[onAdLoaded] " + mAdIndex + " - " + ad.toString());
-                        mAdIndex = (mAdIndex + 4) % mRecyclerViewItems.size();
-                    }
+            @Override
+            public void onAdLoaded(Ad ad) {
+                Log.d(TAG, "[onAdLoaded] insert : " + mAdIndex + ", size : " + mRecyclerViewItems.size() + ", keys size : " + mAdapter.getKeySize());
+                if (mRecyclerViewItems.size() > mAdIndex) {
+                    mRecyclerViewItems.add(mAdIndex, ad);
+                    mAdapter.insertKey(mAdIndex, String.valueOf(ad.hashCode()));
+                    mAdapter.notifyDataSetChanged();
+                    Log.d(TAG, "[onAdLoaded] " + mAdIndex + " - " + ad.toString());
+                    mAdIndex = (mAdIndex + 4) % mRecyclerViewItems.size();
                 }
+            }
 
-                @Override
-                public void onAdClicked(Ad ad) {
+            @Override
+            public void onAdClicked(Ad ad) {
 
-                }
+            }
 
-                @Override
-                public void onLoggingImpression(Ad ad) {
-                    Log.d(TAG, "[onLoggingImpression]" + ad.toString());
-                }
-            });
-            mNativeAd.loadAd();
-        }
+            @Override
+            public void onLoggingImpression(Ad ad) {
+                Log.d(TAG, "[onLoggingImpression]" + ad.toString());
+            }
+        });
+        mNativeAd.loadAd();
     }
 
     @Override
