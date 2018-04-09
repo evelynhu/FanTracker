@@ -143,7 +143,7 @@ public class DraftFragment  extends BaseFragment {
     }
 
     private void initDatabase() {
-        mDatabase =  Database.getDatabase();
+        mDatabase = Database.getDatabase();
         mPostReference = mDatabase.getReference(Post.REF_POST);
     }
 
@@ -188,14 +188,13 @@ public class DraftFragment  extends BaseFragment {
 
     @OnClick(R.id.post_item_button)
     public void uploadImage() {
-        if(mPictureLocalPath != null)
-        {
+        if (mPictureLocalPath != null) {
             final ProgressDialog progressDialog = new ProgressDialog(getContext());
             progressDialog.setTitle(R.string.uploading);
             progressDialog.show();
 
             Log.d(TAG, "upload image from : " + mPictureLocalPath);
-            StorageReference ref = mStorageRef.child("images/"+ UUID.randomUUID().toString());
+            StorageReference ref = mStorageRef.child("images/" + UUID.randomUUID().toString());
             ref.putFile(mPictureLocalPath)
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
@@ -210,14 +209,15 @@ public class DraftFragment  extends BaseFragment {
                         @Override
                         public void onFailure(@NonNull Exception e) {
                             progressDialog.dismiss();
-                            Toast.makeText(getContext(), R.string.upload_error, Toast.LENGTH_LONG).show();                        }
+                            Toast.makeText(getContext(), R.string.upload_error, Toast.LENGTH_LONG).show();
+                        }
                     })
                     .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
-                            double progress = (100.0*taskSnapshot.getBytesTransferred()/taskSnapshot
+                            double progress = (100.0 * taskSnapshot.getBytesTransferred() / taskSnapshot
                                     .getTotalByteCount());
-                            progressDialog.setMessage("Uploaded "+(int)progress+"%");
+                            progressDialog.setMessage("Uploaded " + (int) progress + "%");
                         }
                     });
         } else {
@@ -232,6 +232,27 @@ public class DraftFragment  extends BaseFragment {
         if (requestCode == PICK_FROM_GALLERY && resultCode == RESULT_OK && null != data) {
             mPictureLocalPath = data.getData();
             mImageView.setImageURI(mPictureLocalPath);
+        }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        if (mPictureLocalPath != null) {
+            outState.putString("imageUrl", mPictureLocalPath.toString());
+        }
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        if (savedInstanceState != null) {
+            String imageURl = savedInstanceState.getString("imageUrl");
+
+            if (imageURl != null) {
+                mPictureLocalPath = Uri.parse(imageURl);
+                mImageView.setImageURI(mPictureLocalPath);
+            }
         }
     }
 }

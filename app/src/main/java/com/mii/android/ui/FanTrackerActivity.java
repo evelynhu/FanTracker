@@ -63,10 +63,18 @@ public class FanTrackerActivity extends BaseActivity {
 
     ArrayList<Integer> mAdTypes = new ArrayList<>();
 
+    private DraftFragment mDraftFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        if (savedInstanceState != null) {
+            //Restore the fragment's instance
+            mDraftFragment = (DraftFragment) getSupportFragmentManager().getFragment(savedInstanceState, "draftFragment");
+        }
+        if (mDraftFragment == null) {
+            mDraftFragment = DraftFragment.newInstance();
+        }
         setupViews();
         mAuth = FirebaseAuth.getInstance();
         // active listen to user logged in or not.
@@ -89,6 +97,9 @@ public class FanTrackerActivity extends BaseActivity {
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putIntegerArrayList("AdTypes", mAdTypes);
+        if (mDraftFragment.isAdded()) {
+            getSupportFragmentManager().putFragment(outState, "draftFragment", mDraftFragment);
+        }
     }
 
     @Override
@@ -107,7 +118,7 @@ public class FanTrackerActivity extends BaseActivity {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        SectionsPagerAdapter tabsSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        SectionsPagerAdapter tabsSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(), mDraftFragment);
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
@@ -286,10 +297,12 @@ public class FanTrackerActivity extends BaseActivity {
     private static class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         private ArrayList<Integer> mAdTypes;
-        SectionsPagerAdapter(FragmentManager fm) {
+        private DraftFragment mDraftFragment;
+        SectionsPagerAdapter(FragmentManager fm, DraftFragment draftFragment) {
             super(fm);
             mAdTypes = new ArrayList<>();
             mAdTypes.add(AdType.NATIVE);
+            mDraftFragment = draftFragment;
         }
 
         @Override
@@ -297,7 +310,7 @@ public class FanTrackerActivity extends BaseActivity {
             if (position == PAGE_TAB_POSITION) {
                 return PageFragment.newInstance(mAdTypes);
             } else if (position == POST_TAB_POSITION) {
-                return DraftFragment.newInstance();
+                return mDraftFragment;
             }
 
             return PlaceholderFragment.newInstance(position + 1);
