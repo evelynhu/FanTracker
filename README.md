@@ -45,12 +45,12 @@ The requirements we need to meet to implement this logic:
 
 4. **Reset** : reset the state of the logic defined above if the current Activity is stopped. We need this to track view event again when the user comes back.
 
-***implementation***
+***implementation >>***
 
 1. **RecyclerView OnScrollListener and LinearLayoutManager to detect visible items**
 
   To achieve the basic list item visibility detection, we can go with these two methods to be called on every scroll:
-```Java
+```java
 int findFirstCompletelyVisibleItemPosition()
 int findLastCompletelyVisibleItemPosition()
 ```
@@ -63,7 +63,7 @@ To detect scroll events in the RecyclerView, we need to add a scroll listener, R
   **distinctUntilChanged** to skip equal events in case of multiple scroll callbacks;
   **throttleWithTimeout** to pass an event with a delay and drop current event if another event arrives before the timeout.
 
-```Java
+```java
 public class ThrottleTrackingBus {
 
     private static final int THRESHOLD_MS = 250;
