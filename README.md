@@ -31,6 +31,8 @@ The app is a simulation of an fan page management application with two main scre
 ## Concepts
 
 ### Detecting List Items Observed by User
+*[Reference](https://proandroiddev.com/detecting-list-items-perceived-by-user-8f164dfb1d05)
+
 App tracking solution for the following task: identify which item of the RecyclerView list was viewed and perceived by the user. Perceived in this context means that user held the item in the viewport for at least 250 milliseconds. The image below illustrates this with an example.
 
 ![Item was pervered by the user](/doc/item_was_perveived_by_the user.png)
